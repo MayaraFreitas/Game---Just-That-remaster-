@@ -99,7 +99,7 @@ public class Player : MonoBehaviour
     {
         foreach (Transform t in GroundCheck)
         {
-            if (Physics2D.OverlapCircle(t.position, Radius, GroundLayer))
+            if (Physics2D.OverlapCircle(t.position, Radius, GroundLayer) || Physics2D.OverlapCircle(t.position, Radius, BoatLayer))
             {
                 return true;
             }
