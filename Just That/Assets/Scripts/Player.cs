@@ -10,9 +10,9 @@ public class Player : MonoBehaviour
     public float speed = 10f;
     public float jumpForce = 600f;
 
-    public Transform[] GroundCheck;
+    public Transform GroundCheck;
     public LayerMask GroundLayer;
-    public LayerMask BoatLayer;
+    public LayerMask WaterLayer;
     public float Radius = 0.2f;
 
     private bool paddling = false;
@@ -20,6 +20,13 @@ public class Player : MonoBehaviour
     private Rigidbody2D body2D;
     private SpriteRenderer sprite;
     private Animator animator;
+
+    public bool m_IsGrounded;
+    public bool m_CanPaddle;
+    public bool m_IsDie;
+    public bool m_Jump;
+
+    private float m_Horizontal;
 
     #endregion
 
@@ -31,38 +38,31 @@ public class Player : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        movimentar();
+        m_IsGrounded = Physics2D.OverlapCircle(GroundCheck.position, Radius, GroundLayer);
+        body2D.velocity = new Vector2(m_Horizontal * speed, body2D.velocity.y);
+        m_IsDie = Physics2D.OverlapCircle(GroundCheck.position, Radius, WaterLayer);
     }
 
-    private void movimentar()
+    void Update()
     {
-        // Movimentar horizontalmente
-        float horizontal = Input.GetAxis("Horizontal");
-        body2D.velocity = new Vector2(horizontal * speed, body2D.velocity.y);
-        flip(horizontal);
+        m_Horizontal = Input.GetAxis("Horizontal");
+        paddling = Input.GetButton("Paddle");
 
-        // Pular
-        if (Input.GetButtonDown("Jump") && canJump())
+        if (Input.GetButtonDown("Jump") && m_IsGrounded)
         {
+            m_Jump = true;
             body2D.AddForce(new Vector2(0f, jumpForce));
         }
-        
-        // Remar
-        if (Input.GetButton("Paddle") && canPaddle())
-        {
-            paddling = true;
-        }
-        
-        // Aplicar animação
+
+        flip();
         playerAnimation();
     }
 
-    public void flip(float horizontal)
+    public void flip()
     {
-        if ((horizontal > 0 && sprite.flipX == true) || (horizontal < 0 && sprite.flipX == false))
+        if ((m_Horizontal > 0 && sprite.flipX == true) || (m_Horizontal < 0 && sprite.flipX == false))
         {
             sprite.flipX = !sprite.flipX;
         }
@@ -70,50 +70,34 @@ public class Player : MonoBehaviour
 
     private void playerAnimation()
     {
-        //print("Player Die: " + isDie);
-        /*if (isDie)
+        animator.SetBool("Grounded", m_IsGrounded);
+        animator.SetBool("Die",m_IsDie);
+        animator.SetFloat("Velocity", Mathf.Abs(body2D.velocity.x));
+        animator.SetBool("Remar",  paddling && m_CanPaddle);
+
+        if (m_Jump)
         {
-            animator.Play("die");
-        }
-        else */
-        if (paddling)
-        {
-            animator.Play("remo");
-            paddling = false;
-        }
-        else if (body2D.velocity.x == 0 && body2D.velocity.y == 0)
-        {
-            animator.Play("idle");
-        }
-        else if (body2D.velocity.x != 0 && body2D.velocity.y == 0)
-        {
-            animator.Play("walk");
-        }
-        else if (body2D.velocity.y != 0)
-        {
-            animator.Play("jump");
+            animator.SetTrigger("Jump");
+            m_Jump = false;
         }
     }
 
-    private bool canJump()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        foreach (Transform t in GroundCheck)
+        if (collision.CompareTag("Boat"))
         {
-            if (Physics2D.OverlapCircle(t.position, Radius, GroundLayer) || Physics2D.OverlapCircle(t.position, Radius, BoatLayer))
-            {
-                return true;
-            }
+            Debug.Log("Over boat");
+            m_CanPaddle = true;
         }
-        return false;
     }
 
-    private bool canPaddle()
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        Transform groundCheck = GroundCheck.Where(g => g.transform.name == "GroundCheck0").First();
-        if (Physics2D.OverlapCircle(groundCheck.position, Radius, BoatLayer))
+        if (collision.CompareTag("Boat"))
         {
-            return true;
+            Debug.Log("Exit boat");
+            m_CanPaddle = false;
         }
-        return false;
     }
+
 }
