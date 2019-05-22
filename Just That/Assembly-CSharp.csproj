@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\MoverAnimal.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Reference Include="Cinemachine">
       <HintPath>D:/Projetos/Unity/Game---Just-That-remaster-/Just That/Library/ScriptAssemblies/Cinemachine.dll</HintPath>

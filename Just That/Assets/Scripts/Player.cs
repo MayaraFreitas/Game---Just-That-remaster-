@@ -15,18 +15,17 @@ public class Player : MonoBehaviour
     public LayerMask WaterLayer;
     public float Radius = 0.2f;
 
+    private float horizontal;
     private bool paddling = false;
+
+    private bool isGrounded;
+    private bool isDie;
+    private bool canPaddle;
+    private bool jump;
 
     private Rigidbody2D body2D;
     private SpriteRenderer sprite;
     private Animator animator;
-
-    public bool m_IsGrounded;
-    public bool m_CanPaddle;
-    public bool m_IsDie;
-    public bool m_Jump;
-
-    private float m_Horizontal;
 
     #endregion
 
@@ -40,54 +39,69 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        m_IsGrounded = Physics2D.OverlapCircle(GroundCheck.position, Radius, GroundLayer);
-        body2D.velocity = new Vector2(m_Horizontal * speed, body2D.velocity.y);
-        m_IsDie = Physics2D.OverlapCircle(GroundCheck.position, Radius, WaterLayer);
+        isGrounded = Physics2D.OverlapCircle(GroundCheck.position, Radius, GroundLayer);
+        body2D.velocity = new Vector2(horizontal * speed, body2D.velocity.y);
+        isDie = Physics2D.OverlapCircle(GroundCheck.position, Radius, WaterLayer);
     }
 
     void Update()
     {
-        m_Horizontal = Input.GetAxis("Horizontal");
-        paddling = Input.GetButton("Paddle");
+        horizontal = Input.GetAxis("Horizontal");
+        paddling = Input.GetButton("Paddle") && canPaddle;
 
-        if (Input.GetButtonDown("Jump") && m_IsGrounded)
+        Debug.Log("isGrounded: " + isGrounded);
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            m_Jump = true;
+            jump = true;
             body2D.AddForce(new Vector2(0f, jumpForce));
         }
 
-        flip();
-        playerAnimation();
+        // Mover quando remar
+        if (paddling && this.transform.parent != null)
+        {
+            float y = sprite.flipX ? -(1 * 0.2f) : (1 * 0.2f);
+            this.transform.parent.position = this.transform.parent.position + new Vector3(y, 0);
+        }
+
+        Flip();
+        PlayerAnimation();
     }
 
-    public void flip()
+    public void Flip()
     {
-        if ((m_Horizontal > 0 && sprite.flipX == true) || (m_Horizontal < 0 && sprite.flipX == false))
+        if ((horizontal > 0 && sprite.flipX == true) || (horizontal < 0 && sprite.flipX == false))
         {
             sprite.flipX = !sprite.flipX;
         }
     }
 
-    private void playerAnimation()
+    private void PlayerAnimation()
     {
-        animator.SetBool("Grounded", m_IsGrounded);
-        animator.SetBool("Die",m_IsDie);
+        animator.SetBool("Grounded", isGrounded);
+        animator.SetBool("Die",isDie);
         animator.SetFloat("Velocity", Mathf.Abs(body2D.velocity.x));
-        animator.SetBool("Remar",  paddling && m_CanPaddle);
+        animator.SetBool("Remar",  paddling);
 
-        if (m_Jump)
+        if (jump)
         {
             animator.SetTrigger("Jump");
-            m_Jump = false;
+            jump = false;
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("Tag: " + collision.tag);
         if (collision.CompareTag("Boat"))
         {
             Debug.Log("Over boat");
-            m_CanPaddle = true;
+            canPaddle = true;
+            this.transform.parent = collision.transform;
+        }
+        if (collision.CompareTag("Hit"))
+        {
+            Debug.Log("Hit :(");
+            isDie = true;
         }
     }
 
@@ -96,7 +110,8 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("Boat"))
         {
             Debug.Log("Exit boat");
-            m_CanPaddle = false;
+            canPaddle = false;
+            this.transform.parent = null;
         }
     }
 
