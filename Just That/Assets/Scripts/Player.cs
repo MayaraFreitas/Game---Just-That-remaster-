@@ -26,7 +26,6 @@ public class Player : MonoBehaviour
 
     #endregion
 
-    // Start is called before the first frame update
     void Start()
     {
         body2D = GetComponent<Rigidbody2D>();
