@@ -60,7 +60,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\River.cs" />
+    <Compile Include="Assets\Scripts\Bee.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\GerenciadorDoGame.cs" />
     <Compile Include="Assets\Scripts\MoverAnimal.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Reference Include="Cinemachine">
