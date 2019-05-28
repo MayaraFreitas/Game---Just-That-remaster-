@@ -7,15 +7,9 @@ public class Bee : MonoBehaviour
     public AudioSource AudioSource;
     void Start()
     {
-        AudioSource = GetComponent<AudioSource>();     
+        AudioSource = GetComponent<AudioSource>();
+        AudioSource.Stop();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))

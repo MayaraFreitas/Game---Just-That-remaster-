@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class Player : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class Player : MonoBehaviour
     public LayerMask GroundLayer;
     public LayerMask WaterLayer;
     public float Radius = 0.2f;
+    public AudioSource WalkSound;
+    public GameObject SubMenuCanvas;
 
     private float horizontal;
     private bool paddling = false;
@@ -31,6 +34,8 @@ public class Player : MonoBehaviour
         body2D = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+
+        SubMenuCanvas.SetActive(false);
     }
 
     private void FixedUpdate()
@@ -61,7 +66,25 @@ public class Player : MonoBehaviour
 
         Flip();
         PlayerAnimation();
+
+        if (isDie)
+        {
+            StopAllCoroutines();
+            //StartCoroutine(Die(2.0f));
+            SubMenuCanvas.SetActive(true);
+            //SubMenuCanvas.active = true;
+        }
     }
+    /*
+    public string Die(float delay)
+    {
+        //GamePad.SetVibration(playerIndex, countTimeIsDie, countTimeIsDie);
+
+        yield return new WaitForSeconds(delay);
+
+        //GamePad.SetVibration(playerIndex, 0, 0);
+        SubMenuCanvas.active = true;
+    }*/
 
     public void Flip()
     {
@@ -96,7 +119,6 @@ public class Player : MonoBehaviour
         }
         if (collision.CompareTag("Hit"))
         {
-            Debug.Log("Hit :(");
             isDie = true;
         }
     }
@@ -109,6 +131,11 @@ public class Player : MonoBehaviour
             canPaddle = false;
             this.transform.parent = null;
         }
+    }
+
+    public void walk()
+    {
+        WalkSound.Play();
     }
 
 }
