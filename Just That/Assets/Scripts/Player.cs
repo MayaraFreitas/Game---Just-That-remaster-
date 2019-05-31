@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using XInputDotNetPure;
 
 public class Player : MonoBehaviour
 {
@@ -26,6 +28,11 @@ public class Player : MonoBehaviour
     private Rigidbody2D body2D;
     private SpriteRenderer sprite;
     private Animator animator;
+
+    bool playerIndexSet = false;
+    PlayerIndex playerIndex = (PlayerIndex)0;
+    GamePadState state;
+    GamePadState prevState;
 
     #endregion
 
@@ -69,22 +76,27 @@ public class Player : MonoBehaviour
 
         if (isDie)
         {
+            Debug.Log("MORRI");
+            //GamePad.SetVibration(playerIndex, 1, 0);
+            //Debug.Log("Entrando");
             StopAllCoroutines();
-            //StartCoroutine(Die(2.0f));
-            SubMenuCanvas.SetActive(true);
-            //SubMenuCanvas.active = true;
+            StartCoroutine(Die(0.05f));
+            //Die(5);
+            Debug.Log("Saindo");
+            //GamePad.SetVibration(playerIndex, 0, 0);
         }
     }
-    /*
-    public string Die(float delay)
+
+    public IEnumerator Die(float delay)
     {
-        //GamePad.SetVibration(playerIndex, countTimeIsDie, countTimeIsDie);
-
+        GamePad.SetVibration(playerIndex, 0, (float)0.3);
         yield return new WaitForSeconds(delay);
+        GamePad.SetVibration(playerIndex, 0, 0);
+        //StopAllCoroutines();
+        //SubMenuCanvas.SetActive(true);
 
-        //GamePad.SetVibration(playerIndex, 0, 0);
-        SubMenuCanvas.active = true;
-    }*/
+        SceneManager.LoadScene("Menu");
+    }
 
     public void Flip()
     {

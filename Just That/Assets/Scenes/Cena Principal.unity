@@ -1679,7 +1679,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 467051478}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: 10, z: 0}
+  m_LocalPosition: {x: 383.3, y: 21.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 622990346}
@@ -2132,6 +2132,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Abelhas (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8145524563298404688, guid: 34dfdee401a7f584f8372dda0254162c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8145524563298404700, guid: 34dfdee401a7f584f8372dda0254162c,
         type: 3}
@@ -3120,7 +3125,6 @@ GameObject:
   m_Component:
   - component: {fileID: 733645355}
   - component: {fileID: 733645354}
-  - component: {fileID: 733645353}
   - component: {fileID: 733645356}
   - component: {fileID: 733645357}
   m_Layer: 0
@@ -3130,14 +3134,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &733645353
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 733645352}
-  m_Enabled: 1
 --- !u!20 &733645354
 Camera:
   m_ObjectHideFlags: 0
@@ -3256,6 +3252,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Abelhas (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8145524563298404688, guid: 34dfdee401a7f584f8372dda0254162c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8145524563298404700, guid: 34dfdee401a7f584f8372dda0254162c,
         type: 3}
@@ -3683,6 +3684,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Abelhas (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8145524563298404688, guid: 34dfdee401a7f584f8372dda0254162c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8145524563298404700, guid: 34dfdee401a7f584f8372dda0254162c,
         type: 3}
@@ -4168,6 +4174,59 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1960493996}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1134666460
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1134666463}
+  - component: {fileID: 1134666462}
+  - component: {fileID: 1134666461}
+  m_Layer: 0
+  m_Name: Listerner
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1134666461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134666460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09d8eea264167af4bbff04ecf130e8b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Target: {fileID: 467051483}
+--- !u!81 &1134666462
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134666460}
+  m_Enabled: 1
+--- !u!4 &1134666463
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134666460}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 400.63245, y: 29.684637, z: -31.1875}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1263123318
 GameObject:
   m_ObjectHideFlags: 0
@@ -4921,6 +4980,72 @@ PrefabInstance:
         type: 3}
       propertyPath: MaxDistance
       value: 32.67935
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076730841609267117, guid: 34dfdee401a7f584f8372dda0254162c,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076730841609267117, guid: 34dfdee401a7f584f8372dda0254162c,
+        type: 3}
+      propertyPath: rolloffMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076730841609267117, guid: 34dfdee401a7f584f8372dda0254162c,
+        type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].time
+      value: 0.030600362
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076730841609267117, guid: 34dfdee401a7f584f8372dda0254162c,
+        type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].inWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076730841609267117, guid: 34dfdee401a7f584f8372dda0254162c,
+        type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076730841609267117, guid: 34dfdee401a7f584f8372dda0254162c,
+        type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].time
+      value: 0.80322266
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076730841609267117, guid: 34dfdee401a7f584f8372dda0254162c,
+        type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].inSlope
+      value: -1.0315663
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076730841609267117, guid: 34dfdee401a7f584f8372dda0254162c,
+        type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].outSlope
+      value: -1.0315663
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076730841609267117, guid: 34dfdee401a7f584f8372dda0254162c,
+        type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].inWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076730841609267117, guid: 34dfdee401a7f584f8372dda0254162c,
+        type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076730841609267117, guid: 34dfdee401a7f584f8372dda0254162c,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243004569445929246, guid: c27a4a6f33a1f5343b0f239f2906be54,
+        type: 2}
+    - target: {fileID: 4076730841609267117, guid: 34dfdee401a7f584f8372dda0254162c,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076730841609267117, guid: 34dfdee401a7f584f8372dda0254162c,
+        type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].value
+      value: 0.023651123
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34dfdee401a7f584f8372dda0254162c, type: 3}
@@ -5992,6 +6117,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Abelhas (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 8145524563298404688, guid: 34dfdee401a7f584f8372dda0254162c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8145524563298404700, guid: 34dfdee401a7f584f8372dda0254162c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6060,6 +6190,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Abelhas (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8145524563298404688, guid: 34dfdee401a7f584f8372dda0254162c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8145524563298404700, guid: 34dfdee401a7f584f8372dda0254162c,
         type: 3}
@@ -6198,6 +6333,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Abelhas (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8145524563298404688, guid: 34dfdee401a7f584f8372dda0254162c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8145524563298404700, guid: 34dfdee401a7f584f8372dda0254162c,
         type: 3}

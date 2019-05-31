@@ -4,24 +4,15 @@ using UnityEngine;
 
 public class Bee : MonoBehaviour
 {
-    public AudioSource AudioSource;
-    void Start()
+    public Transform m_Target;
+
+    private void LateUpdate()
     {
-        AudioSource = GetComponent<AudioSource>();
-        AudioSource.Stop();
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
+
+        if (m_Target)
         {
-            AudioSource.Play();
+            transform.position = m_Target.position;
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            AudioSource.Stop();
-        }
-    }
+
 }

@@ -61,12 +61,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Audio.cs" />
+    <Compile Include="Assets\Follow.cs" />
     <Compile Include="Assets\River.cs" />
     <Compile Include="Assets\Scripts\Bee.cs" />
     <Compile Include="Assets\Scripts\Botao.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\MoverAnimal.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\XInputDotNet\Examples\XInputTestCS.cs" />
+    <None Include="Assets\XInputDotNet\Docs.txt" />
+    <None Include="Assets\XInputDotNet\MITLicense.txt" />
     <Reference Include="Cinemachine">
       <HintPath>D:/Projetos/Unity/Game---Just-That-remaster-/Just That/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
     </Reference>
@@ -288,6 +292,9 @@
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="XInputDotNetPure">
+      <HintPath>D:/Projetos/Unity/Game---Just-That-remaster-/Just That/Assets/XInputDotNet/Plugins/XInputDotNetPure.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
       <HintPath>D:/Projetos/Unity/Game---Just-That-remaster-/Just That/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
