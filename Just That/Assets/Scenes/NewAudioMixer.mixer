@@ -21,6 +21,7 @@ AudioMixerController:
     - 3a3fa39b10640f3419b45c59fc2e4403
     - 9168628b1122dec41be19695157b42fb
     - e8ba2c57724b88343873441b9b117080
+    - 07eeb8062f391934c8522656dff08926
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -36,6 +37,7 @@ AudioMixerGroupController:
   m_Children:
   - {fileID: 243189088430120668}
   - {fileID: 243004569445929246}
+  - {fileID: 243821863290224236}
   m_Volume: 1e34f21d3f8ebeb40a1d6ec7d804e9dd
   m_Pitch: 774cbb205b277a3499552e15fbf59392
   m_Effects:
@@ -106,6 +108,38 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!243 &243821863290224236
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: River
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 07eeb8062f391934c8522656dff08926
+  m_Children: []
+  m_Volume: 9e8c6d45bc4f83248be6b9a82f9f8378
+  m_Pitch: ea8902141b753204f9059f0caa3c723d
+  m_Effects:
+  - {fileID: 244038694356629466}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &244038694356629466
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: b60eeb4467f56684d8840b7ec8e2a86a
+  m_EffectName: Attenuation
+  m_MixLevel: 6ffb59b5a602f60428a40c2c4738f7f5
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!244 &244975895487621136
 AudioMixerEffectController:
   m_ObjectHideFlags: 3

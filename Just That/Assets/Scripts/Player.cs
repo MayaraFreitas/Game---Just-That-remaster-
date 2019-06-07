@@ -76,14 +76,8 @@ public class Player : MonoBehaviour
 
         if (isDie)
         {
-            Debug.Log("MORRI");
-            //GamePad.SetVibration(playerIndex, 1, 0);
-            //Debug.Log("Entrando");
             StopAllCoroutines();
-            StartCoroutine(Die(0.05f));
-            //Die(5);
-            Debug.Log("Saindo");
-            //GamePad.SetVibration(playerIndex, 0, 0);
+            StartCoroutine(Die(1f));
         }
     }
 
@@ -92,9 +86,6 @@ public class Player : MonoBehaviour
         GamePad.SetVibration(playerIndex, 0, (float)0.3);
         yield return new WaitForSeconds(delay);
         GamePad.SetVibration(playerIndex, 0, 0);
-        //StopAllCoroutines();
-        //SubMenuCanvas.SetActive(true);
-
         SceneManager.LoadScene("Menu");
     }
 
