@@ -13,19 +13,19 @@ Nossa querida tartaruga decidiu banhar-se na beira do rio, para manter-se limpin
 
 ## Melhorias
 
-## Fundo
+### Fundo
 
 O fundo com árvores foi retirado por gerar confusão aos jogadores.
 
 ![Inicio](https://github.com/MayaraFreitas/Game---Just-That-remaster-/blob/master/Just%20That/img/Inicio.png)
 
-## Remo
+### Remo
 
 Anteriormente o rio possuía um fluxo que movia a madeira e o player não tinha opção a não ser se mover junto ao fluxo. Com algumas mudanças o jogador deverá apertar "Shift" para que o barco se mova para a direção que o player estiver virada e o rio não possúi mais fluxo.
 
 ![Tartaruga+Barco](https://github.com/MayaraFreitas/Game---Just-That-remaster-/blob/master/Just%20That/img/Tartaruga-Barco.png)
 
-## Obstáculos
+### Obstáculos
 
 Foi adicionado som ao se aproximar das abelhas.
 
@@ -37,7 +37,7 @@ Novos obstáculos adicionados, como passar por algumas ilhas, escalar madeiras e
 
 ![Novo Obstaculo 2](https://github.com/MayaraFreitas/Game---Just-That-remaster-/blob/master/Just%20That/img/Novos-Obstaculos-2.png)
 
-## Rio
+### Rio
 
 O rio sofreu algumas melhorias com relação a sua densidade, forçando jogador a tomar cuidado ao jogar a madeira no rio e pular com rapidez, pois não pode tocar na água e a madeira afundará de a cordo com a força e voltará a boiar, assim como ela afundará levemente quando o player pousar sobre ela após o salto.
 
