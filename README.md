@@ -2,7 +2,7 @@
 Refazendo o jogo "Just That" feito anteriormente na Game Jam 2019 para a matéria de Sistemas Embarcados no 7 semestre de 2019.
 
 
-O intúito foi aproveitar a matéria para aprimorar o jogo, dando a possíbilidade do jogador controlar o remo e a direção e não a conrrenteza o levar, melhorar a movimentação com o uso do controller e implementar a compatibilidade com o joystick do xbox one.
+O intuito foi aproveitar a matéria para aprimorar o jogo, dando a possibilidade do jogador controlar o remo e a direção e não a correnteza o levar, melhorar a movimentação com o uso do controller e implementar a compatibilidade com o joystick do xbox one.
 
 [Repositório da Primeira Versão ](https://github.com/MayaraFreitas/Global-Game-Jam-2019)
 
@@ -21,7 +21,7 @@ O fundo com árvores foi retirado por gerar confusão aos jogadores.
 
 ### Remo
 
-Anteriormente o rio possuía um fluxo que movia a madeira e o player não tinha opção a não ser se mover junto ao fluxo. Com algumas mudanças o jogador deverá apertar "Shift" para que o barco se mova para a direção que o player estiver virada e o rio não possúi mais fluxo.
+Anteriormente o rio possuía um fluxo que movia a madeira e o player não tinha opção a não ser se mover junto ao fluxo. Com algumas mudanças o jogador deverá apertar "Shift" para que o barco se mova para a direção que o player estiver virada e o rio não possui mais fluxo.
 
 ![Tartaruga+Barco](https://github.com/MayaraFreitas/Game---Just-That-remaster-/blob/master/Just%20That/img/Tartaruga-Barco.png)
 
@@ -31,7 +31,7 @@ Foi adicionado som ao se aproximar das abelhas.
 
 ![Obstaculo Antigo Inicio](https://github.com/MayaraFreitas/Game---Just-That-remaster-/blob/master/Just%20That/img/Obstaculo-Antigo.png)
 
-Novos obstáculos adicionados, como passar por algumas ilhas, escalar madeiras e saltar entre pegras
+Novos obstáculos adicionados, como passar por algumas ilhas, escalar madeiras e saltar entre regras
 
 ![Novo Obstaculo 1](https://github.com/MayaraFreitas/Game---Just-That-remaster-/blob/master/Just%20That/img/Novos-Obstaculos.png)
 
